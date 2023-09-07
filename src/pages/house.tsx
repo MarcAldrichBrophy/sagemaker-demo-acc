@@ -1,10 +1,12 @@
-
+import './pageStyles/house/house.css';
 
 function HousePage() {
     return (
-        <>
-        <h1>house test</h1>
-        </>
+        <div id="houseDiv">
+        <div id="houseDisplay">
+
+        </div>
+        </div>
     )
 }
 
