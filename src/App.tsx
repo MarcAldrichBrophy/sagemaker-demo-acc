@@ -2,18 +2,39 @@
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
-import './App.css'
+import './App.css';
 import HomePage from './pages/home';
 import AboutPage from './pages/about';
+import HousePage from './pages/house';
 
 function App() {
-  // const [count, setCount] = useState(0)
+
+  let housePages = [];
+  const houseAmount = 20 as number; // change to import from csv len
+
+  for (let houseNum = 1 as number; houseNum <= houseAmount; houseNum++) {
+    let urlString = "house" as string;
+    let numLen = 2 - String(houseNum).length as number;
+    
+    for(let i = 0; i < numLen; i++) {
+        urlString += "0";
+    }
+
+    urlString += String(houseNum);
+    housePages.push({
+      pageid: houseNum,
+      houseid: urlString
+    })
+  }
 
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage/>}/>
         <Route path="/about" element={<AboutPage/>}/>
+        {housePages.map((page) => (
+          <Route path={`/${page.houseid}`} key={page.pageid} element={<HousePage/>} />
+        ))}
       </Routes>
     </BrowserRouter>
     // <>
