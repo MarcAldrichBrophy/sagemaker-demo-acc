@@ -2,7 +2,7 @@
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
-// import './App.css';
+import './App.css';
 import HomePage from './pages/home';
 import AboutPage from './pages/about';
 import HousePage from './pages/house';
@@ -33,7 +33,7 @@ function App() {
         <Route path="/" element={<HomePage/>}/>
         <Route path="/about" element={<AboutPage/>}/>
         {housePages.map((page) => (
-          <Route path={`/${page.houseid}`} key={page.pageid} element={<HousePage/>} />
+          <Route path={`/${page.houseid}`} key={page.pageid} element={<HousePage houseNumber = {page.pageid}/>} />
         ))}
       </Routes>
     </BrowserRouter>
