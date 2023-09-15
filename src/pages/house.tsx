@@ -22,7 +22,7 @@ function HousePage(props: any) {
         </div>
 
         <p id="info">
-            3 bd | 2br
+            {props.beds} bd | {props.baths} br
         </p>
 
         <div id="predictionInfo">
