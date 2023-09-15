@@ -1,0 +1,62 @@
+
+#homeDiv {
+
+    body {
+        background: #1d1d1d;
+        height: 100vh;
+    }
+
+    #itemList {
+        
+        display: grid;
+        grid-template-columns: repeat(3, 3fr);
+        gap: 10px;
+        overflow: auto;
+        max-height: 80vh;
+
+        position: absolute;
+        z-index: 10;
+        width: 90vw;
+        left: 5vw;
+        top: 15vh;
+
+        a {
+            // display: none;
+            // display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            text-decoration: none;
+            cursor: pointer;
+            color: white;
+            font-size: 1em;
+            background-color: #443c2e;
+            height: 300px;
+            width: 350px;
+            border-radius: 20px;
+            overflow: hidden;
+
+            .houseInfo {
+                position: relative;
+                top: 10px;
+            }
+
+            .houseName {
+                position: relative;
+                top: 5px;
+            }
+            img {
+                position: relative;
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        // h2 {
+        //     margin-left: 5vw;
+        //     margin-right: 5vw;
+            
+        // }
+    }
+}

@@ -1,0 +1,43 @@
+#homeDiv body {
+  background: #1d1d1d;
+  height: 100vh;
+}
+#homeDiv #itemList {
+  display: grid;
+  grid-template-columns: repeat(3, 3fr);
+  gap: 10px;
+  overflow: auto;
+  max-height: 80vh;
+  position: absolute;
+  z-index: 10;
+  width: 90vw;
+  left: 5vw;
+  top: 15vh;
+}
+#homeDiv #itemList a {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  color: white;
+  font-size: 1em;
+  background-color: #443c2e;
+  height: 300px;
+  width: 350px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+#homeDiv #itemList a .houseInfo {
+  position: relative;
+  top: 10px;
+}
+#homeDiv #itemList a .houseName {
+  position: relative;
+  top: 5px;
+}
+#homeDiv #itemList a img {
+  position: relative;
+  width: 100%;
+  height: auto;
+}/*# sourceMappingURL=home.css.map */
