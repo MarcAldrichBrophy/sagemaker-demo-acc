@@ -9,38 +9,72 @@
 
     font-family: 'Open Sans', sans-serif;
 
+    #homeInfo {
+        
+        display: grid;
+        grid-template-columns: repeat(1);
+        gap: 10px;
+        overflow: auto;
+        max-height: 60vh;
+
+        position: absolute;
+        z-index: 10;
+        width: 20vw;
+        left: 75vw;
+        top: 20vh;
+    }
     h1 {
         position: relative;
         top: 2vh;
         text-align: center;
         color: #4a4b4c;
     }
-    #info {
-        position: absolute;
-        text-align: left;
-        top: 90vh;
-        left: 36vw;
-        transform: translate(-100%, -100%);
+    h2 {
+        position: relative;
+        top: 10vh;
+        left: 80vw;
     }
+    
     #houseDisplay {
+        overflow: hidden;
         background-color: #e7e5da;
         border-radius: 10%;
         position: absolute;
         width: 40vw;
-        left: 50vw;
-        top: 45vh;
+        left: 45vw;
+        top: 50vh;
         aspect-ratio: 1/1;
         transform: translate(-50%,-50%);
     }
     #predictionInfo {
         position: absolute;
-        top: 45vh;
-        left: 2vw;
+        top: 20vh;
+        // left: 2vw;
+        background-color: #e7e5db;
+        height: 30vh;
+        width: 20vw;
+        border-radius: 10px;
+        text-align: center;
+        overflow: hidden;
+
+        h3 {
+            margin-top: 1vh;
+        }
+        img {
+            top: 15vh;
+            width: 8vw;
+            height: auto;
+            display: none;
+        }
+        p {
+            font-size: 2.5em;
+            margin-top: 8vh;
+        }
     }
     img {
         position: absolute;
-        width: 25vw;
-        aspect-ratio: 1/1;
+        width: 40vw;
+        // aspect-ratio: 1/1;
         left: 50%;
         top: 45%;
         transform: translate(-50%,-50%);

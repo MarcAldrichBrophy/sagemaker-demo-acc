@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
       a.addEventListener('mouseover', () => {
         const span = a.querySelector('span');
         if (!span) {
-          console.log("GENERATING");
 
           interface TextEl extends HTMLElement {
             remove(): void;
@@ -25,9 +24,17 @@ document.addEventListener('DOMContentLoaded', () => {
           }
 
           const text = document.createElement('span') as TextEl;
-          text.textContent = 'PREDICT';
+          text.textContent = 'VIEW';
           text.style.position = "relative";
-          text.style.top = "-450px";
+          text.style.top = "120px";
+          text.style.paddingTop = "6px";
+          text.style.paddingBottom = "4px";
+          text.style.paddingLeft = "20px";
+          text.style.paddingRight = "20px";
+          text.style.border = "2px solid #ccc";
+
+          text.style.opacity = "0";
+          text.style.transition = 'opacity 0.2s ease-out';
 
           const overlay = document.createElement('div') as DivEl;
           overlay.style.position = "relative";
@@ -35,11 +42,21 @@ document.addEventListener('DOMContentLoaded', () => {
           overlay.style.width = '100%';
           overlay.style.height = '100%';
           overlay.style.background = 'rgba(0,0,0,0.5)';
+          
+          overlay.style.opacity = "0";
+          overlay.style.transition = 'opacity 0.2s ease-in-out';
 
           a.appendChild(overlay);
-          a.appendChild(text);
-          
-          overlay.addEventListener('mouseout', () => {
+          overlay.appendChild(text);
+          setTimeout(() => {
+            text.style.opacity = '1';
+            overlay.style.opacity = '1';
+          }, 50);
+
+          overlay.addEventListener('mouseout', e => {
+            if (e.relatedTarget && overlay.contains(e.relatedTarget as Node)) {
+              return;
+            }
             console.log("OUT");
             text.remove();
             overlay.remove();

@@ -4,6 +4,7 @@ import './pageStyles/home/home.css';
 import houseImg from './pageImages/placeholderHouse.png';
 import './utilities/hoverEffect';
 
+
 function HomePage() {
 
     let cells = [];
@@ -28,7 +29,6 @@ function HomePage() {
     }
     return (
         <div id="homeDiv">
-            <h1>SageMaker</h1>
             <div id="itemList">
                 {cells.map((cell) => (
                     <a className="houseButton" href={"./" + cell.houseid} key={cell.pageid}>

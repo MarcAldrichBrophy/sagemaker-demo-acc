@@ -2,3 +2,13 @@
   margin: 0;
   padding: 0;
 }
+
+#sageImg {
+  position: absolute;
+  width: 250px;
+  height: auto;
+  left: 10vw;
+  top: -2vh;
+  transform: translate(-50%);
+  cursor: pointer;
+}
